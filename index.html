@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .flex-container {
+            display: flex;
+        }
+
+        .flex-child {
+            flex: 1;
+            border: 1px solid black;
+        }
+
+        .right,
+        .left,
+        .far-right,
+        .bottom-left,
+        .bottom-right {
+            margin: 20px;
+        }
+
+        .flex-child {
+            margin-right: 20px;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+    <title>CHIP-8</title>
+</head>
+
+<body onload="">
+    <div class="flex-container">
+        <div class="flex-child">
+            <div class="left">
+
+                <main>
+                    <h1>CHIP-8 Interpreter and Hardware Emulator</h1>
+                </main>
+
+                <br />
+                <canvas width=512px height=256px id="screen"></canvas>
+                <br />
+                <br />
+                <input type='file' accept='.ch8' onchange='openFile(event)'><br>
+
+                <br />
+            </div>
+        </div>
+
+        <div class="flex-child">
+            <div class="right">
+                <button onclick="memoryDump();" id="memdumpbutton">Dump Memory</button>
+                <label for="memdumpbutton">(Large values will crash the tab)</label>
+                <br />
+                <label for="from">Start byte in decimal</label>
+                <input type="number" id="from" style="width:50px">
+                <label for="to">End byte</label>
+                <input type="number" id="to" style="width:50px">
+                <br />
+                <table style="width:100%" id="right-table"></table>
+            </div>
+        </div>
+
+        <div class="flex-child">
+            <div class="far-right">
+                <button onclick="registerDump();">Dump Registers</button>
+                <br />
+                <table style="width:100%" id="far-right-table"></table>
+            </div>
+        </div>
+    </div>
+    <div class="flex-container">
+        <div class="flex-child" style="height:150px">
+            <div class="bottom-left">
+                <p>This is just a test.</p>
+            </div>
+        </div>
+        <div class="flex-child">
+            <div class="bottom-right">
+                <p>This is also just a test, but a little different.</p>
+            </div>
+        </div>
+    </div>
+
+    <!--This is all the code, doesn't go in any div tags-->
+    <script src="register.js"></script>
+    <script src="datahandler.js"></script>
+    <script src="screen.js"></script>
+    <script src="initvars.js"></script>
+    <script src="key.js"></script>
+    <script src="main.js"></script>
+    <script src="table.js"></script>
+    <script src="mod.js"></script>
+</body>
+
+</html>
