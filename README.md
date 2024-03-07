@@ -2,6 +2,8 @@
 ### TODO
 -  A couple of the FX** instructions
 -  Some misc. debugging
+-  The memory dump button doesn't work, and the register dump button I would like to have it put into a table.
+-  Stepping through the program.
   <br>
   
 ### Examples
